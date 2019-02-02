@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CoordonateDOM" representedClassName="CoordonateDOM" syncable="YES" codeGenerationType="class">
+        <attribute name="lat" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="WeatherDescriptionDOM" representedClassName="WeatherDescriptionDOM" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="main" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="WeatherDOM" representedClassName="WeatherDOM" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="coord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoordonateDOM" syncable="YES"/>
+        <relationship name="main" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeatherMainDOM" syncable="YES"/>
+        <relationship name="weather" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeatherDescriptionDOM" syncable="YES"/>
+        <relationship name="wind" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WindDOM" syncable="YES"/>
+    </entity>
+    <entity name="WeatherMainDOM" representedClassName="WeatherMainDOM" syncable="YES" codeGenerationType="class">
+        <attribute name="humidity" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pressure" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="temp" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="WindDOM" representedClassName="WindDOM" syncable="YES" codeGenerationType="class">
+        <attribute name="deg" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="WindDOM" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="WeatherMainDOM" positionX="-54" positionY="9" width="128" height="90"/>
+        <element name="WeatherDescriptionDOM" positionX="-36" positionY="36" width="128" height="90"/>
+        <element name="CoordonateDOM" positionX="-18" positionY="63" width="128" height="75"/>
+        <element name="WeatherDOM" positionX="0" positionY="72" width="128" height="135"/>
+    </elements>
+</model>
